@@ -1,0 +1,101 @@
+﻿@model TourManagementSystem.Models.Booking
+
+@{
+    Layout = null;
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<style>
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("https://wallsdesk.com/wp-content/uploads/2016/04/Burj-Al-Arab-Wallpaper.jpg");
+    }
+
+    .details {
+        border: 1px;
+        width: 400px;
+        margin: auto;
+        margin-top: 100px;
+        padding-left: 30px;
+    }
+
+    .table {
+        padding-top: 30px;
+    }
+
+    button {
+        margin-left: 120px;
+        margin-top: 30px;
+        padding: 6px 15px;
+        background-color: rgb(57, 206, 206, 0.80)
+    }
+</style>
+
+<script>
+    $("document").ready(function () {
+        $(".tickets").keyup(function () {
+            var total = 0;
+
+            var x = @ViewBag.TotalPrice;
+            var y = $(".tickets").val();
+            total = x * y;
+
+            $(".cost").val( total );
+
+
+        });
+    });
+</script>
+
+
+
+<body>
+    <div class="details">
+        <h1>Book this Tour</h1>
+        <h4>TourId:@ViewBag.Id</h4>
+        <h4>Tour: @ViewBag.name</h4>
+        <h4>Price per Ticket: @ViewBag.TotalPrice</h4>
+        <h4>StartDate: @ViewBag.LeaveDate</h4>
+        <h4>ReturnDate: @ViewBag.ReturnDate</h4>
+
+
+        @using (Html.BeginForm("Booking", "Tour", FormMethod.Post))
+        {
+            <div id="table">
+                <table class="table">
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Name)</td>
+                        <td>@Html.TextBoxFor(m => m.Name, new { @class = "form control" })</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>@Html.LabelFor(m => m.MobileNumber)</td>
+                        <td>@Html.TextBoxFor(m => m.MobileNumber)</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.LabelFor(m => m.NumberOfTickets)</td>
+                        <td>@Html.TextBoxFor(m => m.NumberOfTickets, "", new { @class = "tickets" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.TotalCost)</td>
+                        <td>@Html.TextBoxFor(m => m.TotalCost, "", new { @class = "cost" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Address)</td>
+                        <td>@Html.TextBoxFor(m => m.Address)</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div><button type="submit">Book</button></div>
+        }
+
+    </div>
+</body>
+
+
+
+

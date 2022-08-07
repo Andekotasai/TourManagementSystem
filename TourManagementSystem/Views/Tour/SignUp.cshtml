@@ -1,0 +1,140 @@
+﻿@model TourManagementSystem.Models.SignUp
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.0/css/fontawesome.min.css" />
+<style>
+    input.input-validation-error,
+    select.input-validation-error {
+        border: 2px solid #CD0A0A;
+    }
+
+    * {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    body {
+        background-image: url("https://wonderfulengineering.com/wp-content/uploads/2014/07/universe-backgrounds-21.jpg");
+    }
+
+    td, th {
+        padding: 5px;
+        padding-left: 7px;
+        color: white;
+    }
+
+    .td {
+        background-color: cyan;
+    }
+
+    .common {
+        width: 350px;
+        margin-top: 200px;
+        background-color: rgba(0,0,0,0.6);
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+    }
+
+    #title {
+        font-size: 30px;
+    }
+
+    div {
+        text-align: center;
+        padding: 3px 0px;
+    }
+
+    .button {
+        padding: 4px 10px;
+        background-color: aqua;
+    }
+
+    .link {
+        color: antiquewhite;
+    }
+</style>
+
+<body>
+    <div class="common">
+
+        <div id="title">Create Account</div>
+
+        @using (Html.BeginForm("SignUp", "Tour", FormMethod.Post))
+        {
+            <table>
+
+                <tr class="form-group">
+                    <th> @Html.LabelFor(m => m.FirstName)</th>
+                    <td>
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "td" })
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { style = "color:red" })
+                    </td>
+
+                </tr>
+                <tr class="form-group">
+                    <th> @Html.LabelFor(m => m.LastName)</th>
+                    <td>
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "td" })
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { style = "color:red" })
+                    </td>
+                </tr>
+                <tr class="form-group">
+                    <th> @Html.LabelFor(m => m.Email)</th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "td" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { style = "color:red" })
+                    </td>
+                </tr>
+                <tr class="form-group">
+                    <th>@Html.LabelFor(m => m.Gender)</th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Gender, new { @class = "td" })
+                        @Html.ValidationMessageFor(m => m.Gender, "", new { style = "color:red" })
+                    </td>
+                </tr>
+                <tr class="form-group">
+                    <th>@Html.LabelFor(m => m.MobileNumber)</th>
+                    <td>
+                        @Html.TextBoxFor(m => m.MobileNumber, new { @class = "td" })
+                        @Html.ValidationMessageFor(m => m.MobileNumber, "", new { style = "color:red" })
+                    </td>
+                </tr>
+                <tr class="form-group">
+                    <th>@Html.LabelFor(m => m.Password)</th>
+                    <td>
+                        @Html.PasswordFor(m => m.Password, new { @class = "td" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { style = "color:red" })
+                    </td>
+
+                </tr>
+                <tr class="form-group">
+                    <th>@Html.LabelFor(m => m.ConfirmPassword)</th>
+                    <td>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "td" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { style = "color:red" })
+                    </td>
+                </tr>
+
+            </table>
+
+
+            <div id="common">
+                Already a member?
+                @Html.ActionLink("LogIn", "SignIn", "", new { @class = "link" })
+            </div>
+            <div id="common"><input type="submit" value="SignUp" /></div>
+
+        }
+    </div>
+</body>
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+<style>
+
+    .row {
+        padding: 30px 100px;
+    }
+</style>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+<div class="row">
+    <h3>
+        Admin Control
+    </h3>
+    <div>
+        <div class="col-sm-12 card bg-light" style="margin-bottom: 1rem;">
+            <div class="card-body">
+                <span class="display-5">Summary</span>
+            </div>
+            <div>
+                <p class="lead">
+                    Number of Tours: <strong>@ViewBag.NumberOfTours</strong>.<br />
+                    Number of Bookings: <strong>@ViewBag.TotalBookings</strong>.<br />
+                    Number of TourBookingUsers: <strong>@ViewBag.TourBookingUsers</strong>.<br />
+                    Number of Users: <strong>@ViewBag.Users</strong>.<br />
+                    Bills:
+                    <ul>
+                        <li>PENDING: @ViewBag.pending</li>
+                        <li>COMPLETED: @ViewBag.completed</li>
+                        <li>CANCELED: @ViewBag.cancelled</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row card-group">
+    <div class="col-md-3 card">
+        <div class="card-body">
+            <h3 class="card-title">
+                TourPackages
+            </h3>
+            <p>
+                Add, Edit or Remove TourPackages.
+            </p>
+            @Html.ActionLink("Access", "Index", "AdminTouristPackages", "", new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="col-md-3 card">
+        <div class="card-body">
+            <h3 class="card-title">
+                TourDetails
+            </h3>
+            <p>
+                Add, Edit or Remove TourDeatails.
+            </p>
+            @Html.ActionLink("Access", "Index", "AdminTourDetails", "", new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="col-md-3 card">
+        <div class="card-body">
+            <h3 class="card-title">
+                Bookings
+            </h3>
+            <p>
+                Add, Edit or Remove Bookings.
+            </p>
+            @Html.ActionLink("Access", "Index", "AdminBookings", "", new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="col-md-3 card">
+        <div class="card-body">
+            <h3 class="card-title">
+                Users
+            </h3>
+            <p>
+                Users' Bill status and Information.
+            </p>
+            @Html.ActionLink("Access", "Index", "AdminSignUps", "", new { @class = "btn btn-primary" })
+        </div>
+    </div>
+
+</div>
+
+

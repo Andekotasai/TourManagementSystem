@@ -1,0 +1,100 @@
+﻿@model IEnumerable<TourManagementSystem.ViewModel.MultipleTableConnection>
+
+@{
+    Layout = null;
+}
+<style>
+    * {
+        text-decoration: none;
+        color: black;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .border {
+        border: 1px solid black;
+        width: 210px;
+        height: 180px;
+        float: left;
+        margin-left: 30px;
+        font-size: 20px;
+        line-height: 25px;
+        padding: 10px 10px;
+    }
+
+        .border div {
+        }
+
+    body {
+        background-image: url("https://demo.goodlayers.com/tourpackage/wp-content/uploads/2013/08/slider-3.jpg");
+    }
+
+    .link {
+        font-size: 15px;
+        margin-top: 20px;
+        width: 110px;
+        text-align: center;
+        background-color: gray;
+        font-weight: 200;
+    }
+
+    .pending {
+        background-color: yellow;
+        margin: 3px 0px;
+    }
+
+    .success {
+        background-color: green;
+        margin: 3px 0px;
+    }
+
+    .failed {
+        background-color: red;
+        margin: 3px 0px;
+    }
+
+
+    button {
+        background-color: deepskyblue;
+    }
+</style>
+
+<body>
+    <button type="button">@Html.ActionLink("<< Back To Homepage ", "Home", "Tour")</button>
+    <h3>Recently Booked Tours</h3>
+    @foreach (var item in Model)
+    {
+
+        <div class="border">
+            @if (@item.Bookings.BookingStatus == "Success")
+            {
+                <div class="success">Status:@item.Bookings.BookingStatus</div>
+            }
+            @if (@item.Bookings.BookingStatus == "BookingPending")
+            {
+                <div class="pending">Status:@item.Bookings.BookingStatus</div>
+            }
+            @if (@item.Bookings.BookingStatus == "Cancelled")
+            {
+                <div class="failed">Status:@item.Bookings.BookingStatus</div>
+            }
+
+            <div>@item.Bookings.TourName</div>
+            <div>@item.Bookings.NumberOfTickets Tickets</div>
+
+            <div>Cost:@item.Bookings.TotalCost/-</div>
+           <!-- <div>StartDate: @item.Details.LeaveDate</div>
+            <div>ReturnDate: @item.Details.ReturnDate</div>-->
+
+
+
+
+            <div class="link">@Html.ActionLink("TourPackages >>", "TourPackageDetails", "Tour")</div>
+        </div>
+
+    }
+
+</body>
+
+
+

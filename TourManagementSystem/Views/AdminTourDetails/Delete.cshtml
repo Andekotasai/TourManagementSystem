@@ -1,0 +1,104 @@
+﻿@model TourManagementSystem.Models.TourDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TourDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TourName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TourName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TourPlaceDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TourPlaceDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TravellingCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TravellingCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostelCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostelCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

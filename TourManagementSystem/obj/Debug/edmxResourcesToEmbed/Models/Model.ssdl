@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TourManagementSystem.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminSignIn">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="Booking_Id" />
+    </Key>
+    <Property Name="Booking_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TourName" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="MobileNumber" Type="float" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+    <Property Name="NumberOfTickets" Type="int" Nullable="false" />
+    <Property Name="TotalCost" Type="float" Nullable="false" />
+    <Property Name="BookingStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SignUp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MobileNumber" Type="float" Nullable="false" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
+    <Property Name="ConfirmPassword" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TourDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TourName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TourPlaceDetails" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HotelName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HotelDetails" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VehicleDetails" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TravellingCost" Type="float" Nullable="false" />
+    <Property Name="HostelCost" Type="float" Nullable="false" />
+    <Property Name="FoodCost" Type="float" Nullable="false" />
+    <Property Name="LeaveDate" Type="date" Nullable="false" />
+    <Property Name="ReturnDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TouristPackages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TouristName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TourManagementSystemStoreContainer">
+    <EntitySet Name="AdminSignIn" EntityType="Self.AdminSignIn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SignUp" EntityType="Self.SignUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TourDetails" EntityType="Self.TourDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TouristPackages" EntityType="Self.TouristPackages" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

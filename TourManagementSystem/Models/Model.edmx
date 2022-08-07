@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TourManagementSystem.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminSignIn">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bookings">
+          <Key>
+            <PropertyRef Name="Booking_Id" />
+          </Key>
+          <Property Name="Booking_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TourName" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="MobileNumber" Type="float" Nullable="false" />
+          <Property Name="Address" Type="varchar(max)" Nullable="false" />
+          <Property Name="NumberOfTickets" Type="int" Nullable="false" />
+          <Property Name="TotalCost" Type="float" Nullable="false" />
+          <Property Name="BookingStatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SignUp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MobileNumber" Type="float" Nullable="false" />
+          <Property Name="Password" Type="varchar(max)" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TourDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TourName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TourPlaceDetails" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HotelName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HotelDetails" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="VehicleDetails" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TravellingCost" Type="float" Nullable="false" />
+          <Property Name="HostelCost" Type="float" Nullable="false" />
+          <Property Name="FoodCost" Type="float" Nullable="false" />
+          <Property Name="LeaveDate" Type="date" Nullable="false" />
+          <Property Name="ReturnDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TouristPackages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TouristName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TourManagementSystemStoreContainer">
+          <EntitySet Name="AdminSignIn" EntityType="Self.AdminSignIn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SignUp" EntityType="Self.SignUp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TourDetails" EntityType="Self.TourDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TouristPackages" EntityType="Self.TouristPackages" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TourManagementSystem" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminSignIn">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="Booking_Id" />
+          </Key>
+          <Property Name="Booking_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TourName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="Double" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumberOfTickets" Type="Int32" Nullable="false" />
+          <Property Name="TotalCost" Type="Double" Nullable="false" />
+          <Property Name="BookingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SignUp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MobileNumber" Type="Double" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TourDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TourName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TourPlaceDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VehicleDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TravellingCost" Type="Double" Nullable="false" />
+          <Property Name="HostelCost" Type="Double" Nullable="false" />
+          <Property Name="FoodCost" Type="Double" Nullable="false" />
+          <Property Name="LeaveDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ReturnDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="TouristPackage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TouristName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TourManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminSignIns" EntityType="Self.AdminSignIn" />
+          <EntitySet Name="Bookings" EntityType="Self.Booking" />
+          <EntitySet Name="SignUps" EntityType="Self.SignUp" />
+          <EntitySet Name="TourDetails" EntityType="Self.TourDetail" />
+          <EntitySet Name="TouristPackages" EntityType="Self.TouristPackage" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TourManagementSystemStoreContainer" CdmEntityContainer="TourManagementSystemEntities">
+          <EntitySetMapping Name="AdminSignIns">
+            <EntityTypeMapping TypeName="TourManagementSystem.AdminSignIn">
+              <MappingFragment StoreEntitySet="AdminSignIn">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="TourManagementSystem.Booking">
+              <MappingFragment StoreEntitySet="Bookings">
+                <ScalarProperty Name="Booking_Id" ColumnName="Booking_Id" />
+                <ScalarProperty Name="TourName" ColumnName="TourName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="NumberOfTickets" ColumnName="NumberOfTickets" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="BookingStatus" ColumnName="BookingStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SignUps">
+            <EntityTypeMapping TypeName="TourManagementSystem.SignUp">
+              <MappingFragment StoreEntitySet="SignUp">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TourDetails">
+            <EntityTypeMapping TypeName="TourManagementSystem.TourDetail">
+              <MappingFragment StoreEntitySet="TourDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TourName" ColumnName="TourName" />
+                <ScalarProperty Name="TourPlaceDetails" ColumnName="TourPlaceDetails" />
+                <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+                <ScalarProperty Name="HotelDetails" ColumnName="HotelDetails" />
+                <ScalarProperty Name="VehicleDetails" ColumnName="VehicleDetails" />
+                <ScalarProperty Name="TravellingCost" ColumnName="TravellingCost" />
+                <ScalarProperty Name="HostelCost" ColumnName="HostelCost" />
+                <ScalarProperty Name="FoodCost" ColumnName="FoodCost" />
+                <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TouristPackages">
+            <EntityTypeMapping TypeName="TourManagementSystem.TouristPackage">
+              <MappingFragment StoreEntitySet="TouristPackages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TouristName" ColumnName="TouristName" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

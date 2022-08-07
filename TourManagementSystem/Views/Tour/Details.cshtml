@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TourManagementSystem.Models.TourDetail>
+@{
+    Layout = null;
+}
+<style>
+    * {
+        text-decoration: none;
+        color: black;
+    }
+
+    body {
+        background-image: url("https://png.pngtree.com/back_origin_pic/05/06/89/6e270dec6f11931302918d797f0eef7a.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 20px 30px;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .back-button {
+        text-align: center;
+        margin-top: 80px;
+        padding: 5px 20px;
+        background-color: bisque;
+        border-radius: 4px;
+    }
+
+    .booking-button {
+        text-align: center;
+        margin-left: 500px;
+        margin-top: 80px;
+        padding: 5px 20px;
+        background-color: bisque;
+        border-radius: 4px;
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+<body>
+    @foreach (var item in Model)
+    {
+        <h1>@item.TourName</h1>
+        <p>@item.TourPlaceDetails</p>
+        <h2>@item.HotelName</h2>
+        <p>@item.HotelDetails</p>
+        <h3>HotelCost: @item.HostelCost/-</h3>
+        <h3>FoodCost: @item.FoodCost/-</h3>
+        <h2>TransportDetails</h2>
+        <p>@item.VehicleDetails</p>
+        <h3>TravellingCost: @item.TravellingCost/-</h3>
+
+        <div>
+            <button type="button" class="back-button">@Html.ActionLink("<< Back", "TourPackageDetails")</button>
+            <button type="button" class="booking-button">@Html.ActionLink("Booking >>", "Booking", new { id = @item.Id})</button>
+        </div>
+
+    }
+
+</body>
+

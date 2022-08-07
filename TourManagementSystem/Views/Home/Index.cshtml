@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    * {
+        text-decoration: none;
+        color: black
+    }
+
+    .main {
+        text-align: center;
+        color: blue;
+        text-shadow: initial;
+    }
+
+
+
+    body {
+        width: 100%;
+        padding-bottom: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    div {
+        text-align: center;
+        ;
+    }
+
+    .link {
+        text-align: center;
+        background-color: bisque;
+        padding: 5px;
+        border: solid;
+        border-radius: 5px;
+        margin-top: 40px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+<body style="background-image: url('https://wallpapertag.com/wallpaper/full/5/c/2/141471-gorgerous-travel-background-2560x1440-for-4k.jpg'); ">
+    <div class="containter">
+        <h3 class="main">WelCome</h3>
+        <h3 class="main">To</h3>
+        <h1 class="main">TourManagement System</h1>
+        <div>
+            <button type="button" class="link">@Html.ActionLink("UserPage >>>", "AppInterface", "Tour")</button>
+            <button type="button" class="link">@Html.ActionLink("AdminPage >>>", "SignIn", "Admin")</button>
+        </div>
+    </div>
+
+
+</body>

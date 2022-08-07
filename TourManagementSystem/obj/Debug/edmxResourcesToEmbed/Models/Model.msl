@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TourManagementSystemStoreContainer" CdmEntityContainer="TourManagementSystemEntities">
+    <EntitySetMapping Name="AdminSignIns">
+      <EntityTypeMapping TypeName="TourManagementSystem.AdminSignIn">
+        <MappingFragment StoreEntitySet="AdminSignIn">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="TourManagementSystem.Booking">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="Booking_Id" ColumnName="Booking_Id" />
+          <ScalarProperty Name="TourName" ColumnName="TourName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="NumberOfTickets" ColumnName="NumberOfTickets" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="BookingStatus" ColumnName="BookingStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SignUps">
+      <EntityTypeMapping TypeName="TourManagementSystem.SignUp">
+        <MappingFragment StoreEntitySet="SignUp">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourDetails">
+      <EntityTypeMapping TypeName="TourManagementSystem.TourDetail">
+        <MappingFragment StoreEntitySet="TourDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TourName" ColumnName="TourName" />
+          <ScalarProperty Name="TourPlaceDetails" ColumnName="TourPlaceDetails" />
+          <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+          <ScalarProperty Name="HotelDetails" ColumnName="HotelDetails" />
+          <ScalarProperty Name="VehicleDetails" ColumnName="VehicleDetails" />
+          <ScalarProperty Name="TravellingCost" ColumnName="TravellingCost" />
+          <ScalarProperty Name="HostelCost" ColumnName="HostelCost" />
+          <ScalarProperty Name="FoodCost" ColumnName="FoodCost" />
+          <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TouristPackages">
+      <EntityTypeMapping TypeName="TourManagementSystem.TouristPackage">
+        <MappingFragment StoreEntitySet="TouristPackages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TouristName" ColumnName="TouristName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    * {
+        text-decoration: none;
+        color: black;
+    }
+
+    body {
+        width: 100%;
+        padding-bottom: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .title {
+        text-align: center;
+        margin: 0px;
+        padding-top: 50px;
+        color: navajowhite;
+    }
+
+    .SignIn {
+        width: 25px;
+        height: 10px;
+        padding: 5px;
+        background-color: gray;
+        color: aliceblue;
+        border-radius: 5px;
+    }
+
+    .SignUp {
+        width: 25px;
+        height: 10px;
+        padding: 5px;
+        background-color: gray;
+        color: aliceblue;
+        border-radius: 5px;
+        margin-left: 30px;
+    }
+
+    .sign {
+        padding-top: 200px;
+        text-align: center;
+    }
+</style>
+
+<body class="AppInterface" style="background-image: url('https://images.designtrends.com/wp-content/uploads/2016/04/04071835/Collage-Travel-Wallpaper.jpg'); ">
+    @using (Html.BeginForm("VisitPlace", "Tour", FormMethod.Post))
+    {
+        <input type="text" style="border-radius: 5px; background-color: aqua;" name="place" placeholder="Enter the place you have to visit" />
+        <input type="submit" value="search" style="background-color:aqua;border-radius:5px;" />
+    }
+
+    <h1 class="title">TourManagement System</h1>
+    <div class="sign">
+        @Html.ActionLink("SignIn", "SignIn", null, new { @class = "SignIn" })
+        @Html.ActionLink("SignUp", "SignUp", null, new { @class = "SignUp" })
+    </div>
+</body>
+
+

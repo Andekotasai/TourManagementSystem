@@ -1,0 +1,75 @@
+﻿@model TourManagementSystem.Models.SignUp
+@{
+    Layout = null;
+}
+
+<style>
+    body {
+        background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/04/Free-Download-Mountain-Hd-Wallpapers.jpg");
+    }
+
+    * {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        width: 300px;
+        margin: 200px 550px;
+        vertical-align: auto;
+        background-color: rgba(0,0,0,0.5);
+        text-align: center;
+    }
+
+    div {
+        margin: 3px 9px;
+    }
+
+    #SignIn {
+        background-color: lightseagreen;
+        border-radius: 5px;
+    }
+
+    .button {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .title {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+<body>
+    <div class="container">
+        @using (Html.BeginForm("SignIn", "Tour", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true, "", new { style = "color:red;" })
+
+
+            <div class="title">LogIn</div>
+            <div style="color:white;">UserName</div>
+            <div>
+                <input type="text" placeholder="Enter UserName" name="Username" id="Username" />
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+            <div style="color:white;">Password</div>
+            <div>
+                <input type="password" placeholder="EnterPassword" name="Password" id="Password" />
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="button"><input type="submit" value="SignIn" id="SignIn" /></div>
+
+        }
+    </div>
+</body>
+
+
+
+
+

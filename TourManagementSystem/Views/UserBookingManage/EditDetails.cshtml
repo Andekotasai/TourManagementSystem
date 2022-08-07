@@ -1,0 +1,66 @@
+﻿@model TourManagementSystem.Models.Booking
+@{
+    Layout = null;
+}
+<style>
+    * {
+        text-decoration: none;
+        color: black;
+    }
+
+    body {
+        width: 300px;
+        margin: auto;
+        height: 250px;
+        margin-top: 200px;
+        background-image: url("https://cdn.wallpapersafari.com/10/58/A2hksN.png");
+    }
+
+    table {
+        padding-top: 50px;
+        padding-left: 5px;
+    }
+
+        table td {
+            padding: 8px 3px;
+            background: transparent;
+        }
+
+    button {
+        margin-left: 125px;
+        padding: 3px 6px;
+        margin-top: 20px;
+        background-color: bisque;
+        border-radius: 10px;
+    }
+
+    .main {
+        background-color: rgba(0,0,0,0.5)
+    }
+</style>
+<body>
+    <div class="main">
+        @using (Html.BeginForm("Updating", "UserBookingManage", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Name)</td>
+                    <td>@Html.EditorFor(m => m.Name)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Address)</td>
+                    <td>@Html.EditorFor(m => m.Address)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.MobileNumber)</td>
+                    <td>@Html.EditorFor(m => m.MobileNumber)</td>
+                </tr>
+            </table>
+            <button type="submit">Submit</button>
+
+        }
+    </div>
+
+
+
+</body>

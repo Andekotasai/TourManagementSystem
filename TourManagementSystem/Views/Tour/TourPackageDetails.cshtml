@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TourManagementSystem.Models.TouristPackage>
+@{
+    Layout = null;
+}
+
+<style>
+    .main-div-TourPackage {
+        margin-top: 50px;
+        width: 70%;
+        height: 500px;
+        float: left;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    th {
+        padding: 30px;
+        font-size: 20px;
+    }
+
+    td {
+        padding: 25px 60px;
+        font-size: 20px;
+        background-color: rgba(126, 134, 205, 0.56);
+    }
+
+
+
+    table {
+        border-spacing: 0px 20px;
+        border-collapse: separate;
+        background-color: rgba(126, 134, 205, 0.46);
+        border-radius: 3px;
+    }
+
+    .package {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+</style>
+@Html.Partial("Home");
+<div class="main-div-TourPackage">
+    <div>
+        <h1 class="package">TourPackages</h1>
+        <table>
+            <tr>
+
+                <th>Id</th>
+                <th>TouristPlace</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>Details</th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.TouristName</td>
+                    <td>@item.Location</td>
+                    <td>@item.Price</td>
+                    <td class="button">@Html.ActionLink("Details>>", "Details", new { id = item.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
